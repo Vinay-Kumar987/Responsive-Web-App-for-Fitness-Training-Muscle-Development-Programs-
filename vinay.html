@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- codewithmanish -->
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gym website</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <style>@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;500;700&display=swap");
+        /* Base */
+        :root {
+          --clr-primary: #0c8379;
+        }
+        
+        *,
+        *::after,
+        *::before {
+          box-sizing: border-box;
+          padding: 0;
+          margin: 0;
+          font-family: "Nunito", sans-serif;
+        }
+        
+        html {
+          scroll-behavior: smooth;
+        }
+        
+        body {
+          width: 100%;
+          min-height: 100vh;
+          background: radial-gradient(#111, #071a1a);
+          color: #ffffffec;
+          overflow-x: hidden;
+        }
+        
+        .container {
+          width: 80%;
+          margin: 0 auto;
+        }
+        
+        .flex {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        .header,
+        .section {
+          width: 100%;
+          padding: 40px 0;
+          overflow: hidden;
+          background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1010%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(28%2c 38%2c 41%2c 1)'%3e%3c/rect%3e%3cpath d='M0 0L764.54 0L0 638.45z' filter='url(%23SvgjsFilter1011)' fill='rgba(42%2c 42%2c 45%2c 1)'%3e%3c/path%3e%3cpath d='M0 560L764.54 560L0 -78.45000000000005z' filter='url(%23SvgjsFilter1011)' fill='rgba(42%2c 42%2c 45%2c 1)'%3e%3c/path%3e%3cpath d='M1440 560L675.46 560L1440 -78.45000000000005z' filter='url(%23SvgjsFilter1011)' fill='rgba(42%2c 42%2c 45%2c 1)'%3e%3c/path%3e%3cpath d='M1440 0L675.46 0L1440 638.45z' filter='url(%23SvgjsFilter1011)' fill='rgba(42%2c 42%2c 45%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1010'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cfilter height='130%25' id='SvgjsFilter1011'%3e%3cfeGaussianBlur in='SourceAlpha' stdDeviation='5' result='TopLeftG'%3e%3c/feGaussianBlur%3e%3cfeOffset dx='-5' dy='-5' in='TopLeftG' result='TopLeftO'%3e%3c/feOffset%3e%3cfeComponentTransfer in='TopLeftO' result='TopLeftC'%3e%3cfeFuncA type='linear' slope='0.7'%3e%3c/feFuncA%3e%3c/feComponentTransfer%3e%3cfeGaussianBlur in='SourceAlpha' stdDeviation='5' result='TopRightG'%3e%3c/feGaussianBlur%3e%3cfeOffset dx='5' dy='-5' in='TopRightG' result='TopRightO'%3e%3c/feOffset%3e%3cfeComponentTransfer in='TopRightO' result='TopRightC'%3e%3cfeFuncA type='linear' slope='0.7'%3e%3c/feFuncA%3e%3c/feComponentTransfer%3e%3cfeGaussianBlur in='SourceAlpha' stdDeviation='5' result='BottomLeftG'%3e%3c/feGaussianBlur%3e%3cfeOffset dx='-5' dy='5' in='BottomLeftG' result='BottomLeftO'%3e%3c/feOffset%3e%3cfeComponentTransfer in='BottomLeftO' result='BottomLeftC'%3e%3cfeFuncA type='linear' slope='0.7'%3e%3c/feFuncA%3e%3c/feComponentTransfer%3e%3cfeGaussianBlur in='SourceAlpha' stdDeviation='5' result='BottomRightG'%3e%3c/feGaussianBlur%3e%3cfeOffset dx='5' dy='5' in='BottomRightG' result='BottomRightO'%3e%3c/feOffset%3e%3cfeComponentTransfer in='BottomRightO' result='BottomRightC'%3e%3cfeFuncA type='linear' slope='0.7'%3e%3c/feFuncA%3e%3c/feComponentTransfer%3e%3cfeMerge%3e%3cfeMergeNode in='TopLeftC'%3e%3c/feMergeNode%3e%3cfeMergeNode in='TopRightC'%3e%3c/feMergeNode%3e%3cfeMergeNode in='BottomLeftC'%3e%3c/feMergeNode%3e%3cfeMergeNode in='BottomRightC'%3e%3c/feMergeNode%3e%3cfeMergeNode in='SourceGraphic'%3e%3c/feMergeNode%3e%3c/feMerge%3e%3c/filter%3e%3c/defs%3e%3c/svg%3e");
+        
+        }
+        
+        .header::after,
+        .header::before,
+        .section::after,
+        .section::before {
+          content: "";
+          background: url(https://raw.githubusercontent.com/programmercloud/pgc-gym/main/img/blur-1.png);
+          position: absolute;
+          width: 400px;
+          height: 400px;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          bottom: 0;
+        }
+        
+        .header::after {
+          left: -200px;
+        }
+        
+        .header::before {
+          right: -200px;
+        }
+        
+        .mb {
+          margin-bottom: 30px;
+        }
+        
+        .mt {
+          margin-top: 20px;
+        }
+        
+        .section {
+          background: #1d1f1e;
+          position: relative;
+          padding: 80px 0;
+        }
+        
+        .section::after {
+          left: -200px;
+        }
+        
+        .section::before {
+          width: 600px;
+          right: -200px;
+        }
+        
+        .section:nth-child(even) {
+          background: #141615;
+        }
+        
+        .section:nth-child(even)::after,
+        .section:nth-child(even)::before {
+          display: none;
+        }
+        
+        .primary {
+          font-size: 35px;
+          font-weight: 700;
+        }
+        
+        .secondary {
+          font-size: 25px;
+          font-weight: 700;
+        }
+        
+        .tertiary {
+          font-size: 15px;
+        }
+        /* End Base */
+        
+        /* Menu */
+        .menu {
+          width: 100%;
+          background: linear-gradient(to right, #0e0e0e 70%, #142d2a);
+          padding: 12px 0;
+        }
+        
+        .menu .container {
+          justify-content: space-between;
+        }
+        
+        .mobile-btn {
+          display: none;
+        }
+        
+        .logo {
+          cursor: pointer;
+        }
+        
+        .logo img {
+          width: 55px;
+          height: auto;
+        }
+        
+        .nav {
+          list-style: none;
+        }
+        
+        .nav-item {
+          display: inline-block;
+          margin-right: 30px;
+          font-size: 18px;
+          font-weight: 400;
+        }
+        
+        .nav-item a {
+          text-decoration: none;
+          color: #fff;
+        }
+        
+        .nav-item:hover a {
+          color: #29a396;
+          transition: 0.3s linear;
+        }
+        
+        .nav-item:last-of-type {
+          margin-right: 0;
+        }
+        /* End Menu */
+        
+        /* Buttons */
+        .btn {
+          padding: 10px 28px;
+          background: var(--clr-primary);
+          border-radius: 40px;
+          font-size: 20px;
+          font-weight: 400;
+          text-decoration: none;
+          color: #fff;
+          display: inline-block;
+        }
+        
+        .btn:hover {
+          background: #165f56;
+          transition: 0.3s linear;
+        }
+        
+        .btn-2 {
+          font-size: 35px;
+          text-decoration: none;
+          color: #ccc;
+          transition: 0.3s linear;
+        }
+        
+        .btn-2:hover {
+          color: #29a396;
+        }
+        
+        /* End Buttons */
+        
+        /* Header */
+        .text {
+          width: 60%;
+        }
+        
+        .visual {
+          width: 40%;
+        }
+        
+        
+        .visual img {
+          width: 100%;
+        }
+        
+        
+        .header h1 {
+          font-size: 60px;
+          font-weight: 750;
+        }
+        
+        .header h1 span {
+          color: var(--clr-primary);
+        
+        }
+        /* End Header */
+        
+        .section:nth-child(even) .visual {
+          margin-right: 30px;
+        }
+        
+        /* Trainer */
+        #trainer {
+          text-align: center;
+        }
+        
+        .trainer img {
+          border-top-left-radius: 80px;
+          border-top-right-radius: 20px;
+          border-bottom-right-radius: 80px;
+          border-bottom-left-radius: 20px;
+          margin-bottom: 10px;
+          outline: 2px solid #fff;
+          padding: 14px;
+          width: 170px;
+        }
+        
+        .trainer .mb {
+          margin-bottom: 10px;
+        }
+        /* End Trainer */
+        
+        /* Testimonial */
+        #testimonial .visual img {
+          width: 90%;
+          display: block;
+          margin-left: auto;
+        }
+        
+        .client {
+          background: #def7f6;
+          color: #000;
+          padding: 20px 10px;
+          margin-right: 20px;
+          text-align: center;
+          border-radius: 20px;
+          position: relative;
+          margin-top: 20px;
+        }
+        .client:hover{
+            background-color: #1d8585a1;
+        }
+        
+        .client img {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          position: absolute;
+          top: -40px;
+          left: calc(50% - 40px);
+        }
+        
+        .client h2 {
+          margin: 20px 0 10px 0;
+        }
+        /* End Testimonial */
+        
+        /* Discount */
+        #discount {
+          padding: 40px 0;
+        }
+        /* End  Discount */
+        
+        /* Footer */
+        .footer {
+          padding: 30px 0;
+          border-top: 1px solid #fff;
+          text-align: center;
+        }
+        /* End Footer */
+        
+        /* Responsive */
+        
+        @media (max-width: 768px) {
+          .flex {
+            flex-direction: column;
+            text-align: center;
+          }
+        
+          .mobile-btn {
+            display: block;
+            font-size: 35px;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 12px;
+          }
+        
+          .menu.active .nav-item {
+            display: block;
+            margin: 30px 0;
+          }
+        
+          .nav,
+          .menu .btn {
+            display: none;
+          }
+        
+          .menu.active .nav,
+          .menu.active .btn {
+            display: block;
+          }
+        
+          .menu.active {
+            padding: 30px 0;
+            width: 100%;
+            transition: all 0.8s ease;
+          }
+        
+          .text,
+          .visual {
+            width: 100%;
+            margin-bottom: 20px;
+          }
+        
+          .text h1 {
+            font-size: 45px;
+          }
+        
+          .primary {
+            font-size: 28px;
+          }
+        
+          .secondary {
+            font-size: 22px;
+          }
+        
+          .tertiary {
+            font-size: 14px;
+          }
+        
+          .trainer {
+            margin-bottom: 20px;
+          }
+        
+          .client {
+            margin-bottom: 50px;
+          }
+        
+          #discount .visual img {
+            width: 70%;
+            margin-bottom: 30px;
+          }
+        }
+        
+        @media (max-width: 530px) {
+          .header::after,
+          .header::before,
+          .section::after,
+          .section::before {
+            display: none;
+          }
+        
+          .primary {
+            font-size: 25px;
+          }
+        
+          .secondary {
+            font-size: 20px;
+          }
+        
+          .tertiary {
+            font-size: 12px;
+          }
+        
+          .text h1 {
+            font-size: 34px;
+          }
+        
+          .btn,
+          .btn-2 {
+            font-size: 16px;
+          }
+        }
+        
+        /* End Responsive */</style>
+</head>
+
+<body>
+    <!-- Menu -->
+    <div class="menu">
+        <div class="container flex">
+
+            <div class="mobile-btn">
+                <ion-icon name="grid"></ion-icon>
+            </div>
+            <div class="logo">
+                <img src="img/logo.png" alt="" />
+            </div>
+
+            <ul class="nav">
+                <li class="nav-item"><a href="#home">Home</a></li>
+                <li class="nav-item"><a href="#why-us">Features</a></li>
+                <li class="nav-item"><a href="#explore">Explore</a></li>
+                <li class="nav-item"><a href="#discount">Register</a></li>
+            </ul>
+
+            <a href="#" class="btn">Register</a>
+        </div>
+    </div>
+    <!-- End Menu -->
+
+    <!-- Header -->
+    <header class="header" id="home">
+        <div class="container flex">
+            <div class="text">
+                <h1 class="mb">
+                 Complete
+                   <span>
+                    Daily
+                   </span> <br/>
+                    <span>Workout</span> At Home.!
+                </h1>
+
+                <p class="mb">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima
+                    sunt sed tempora neque molestiae corrupti nobis harum ullam eos nam!
+                </p>
+
+                <a href="#" class="btn mt">Start Now</a>
+            </div>
+
+            <div class="visual">
+                <img src="img/1.png" alt="" />
+            </div>
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Why Us -->
+    <div class="section" id="why-us">
+        <div class="container flex">
+            <div class="text">
+                <h2 class="primary mb">Why Choose Us?</h2>
+                <h3 class="secondary mb">Consulatation with Expert.</h3>
+                <p class="tertiary">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias quos
+                    maxime tempore?
+                </p>
+
+                <h3 class="secondary mb">Consulatation with Expert.</h3>
+                <p class="tertiary">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias quos
+                    maxime tempore?
+                </p>
+            </div>
+            <div class="visual">
+                <img src="img/3.png" alt="" />
+            </div>
+        </div>
+    </div>
+    <!-- End Why Us -->
+
+    <!-- Explore -->
+    <div class="section" id="explore">
+        <div class="container flex">
+            <div class="visual">
+                <img src="img/2.png" alt="" />
+            </div>
+            <div class="text">
+                <h2 class="primary mb">
+                    Explore Our Fitness <br />
+                    Studio
+                </h2>
+                <p class="tertiary mb">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+                    esse vitae ratione quos maiores eveniet temporibus illum! Eligendi
+                    amet officia unde sint totam ut optio. Molestiae, illo quia?
+                </p>
+
+                <a href="#" class="btn mt">Get Started Now</a>
+            </div>
+        </div>
+    </div>
+    <!-- End Explore -->
+
+    <!-- Trainer -->
+    <div class="section" id="trainer">
+        <h2 class="primary mb">Our Professional Trainers</h2>
+        <div class="container flex">
+            <div class="trainer">
+                <img src="img/6.png" alt="" />
+                <h3 class="secondary mb">Alan Smith</h3>
+                <p class="tertiary mb">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla.
+                </p>
+
+                <a href="#" class="btn-2">
+                    <ion-icon name="arrow-redo-circle-outline"></ion-icon>
+                </a>
+            </div>
+
+            <div class="trainer">
+                <img src="img/4.png" alt="" />
+                <h3 class="secondary mb">Alan Smith</h3>
+                <p class="tertiary mb">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla.
+                </p>
+
+                <a href="#" class="btn-2">
+                    <ion-icon name="arrow-redo-circle-outline"></ion-icon>
+                </a>
+            </div>
+
+            <div class="trainer">
+                <img src="img/1.png" alt="" />
+                <h3 class="secondary mb">Alan Smith</h3>
+                <p class="tertiary mb">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla.
+                </p>
+
+                <a href="#" class="btn-2">
+                    <ion-icon name="arrow-redo-circle-outline"></ion-icon>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- End Trainer -->
+
+    <!-- Testimonial -->
+    <div class="section" id="testimonial">
+        <div class="container flex">
+            <div class="text">
+                <h2 class="primary">
+                    That's What Our Super <br />
+                    Client Says
+                </h2>
+
+                <br />
+                <br />
+                <br />
+
+                <div class="client">
+                    <img src="img/4.png" alt="" />
+                    <h2 class="secondary">Exelent Training</h2>
+                    <p class="tertiary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+                        quas voluptatem ad, repudiandae voluptates odio deleniti
+                        reiciendis in veniam quidem expedita maxime error fugit. Pariatur
+                        quasi sunt aut id. Lorem, ipsum dolor sit amet consectetur
+                        adipisicing elit. Neque, officiis.
+                    </p>
+                </div>
+            </div>
+            <div class="visual">
+                <img src="img/1.png" alt="" />
+            </div>
+        </div>
+    </div>
+    <!-- End Testimonial -->
+
+    <!-- Discount -->
+    <div class="section" id="discount">
+        <div class="container flex">
+            <div class="visual">
+                <img src="img/5.png" alt="" />
+            </div>
+            <div class="text">
+                <h2 class="primary mb">
+                    Fitness Classes This Summer, Pay Now And Get 45% Discount
+                </h2>
+
+                <p class="tertiary mb">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab maxime
+                    minus praesentium est et veniam voluptate alias excepturi minima
+                    placeat amet nostrum, eligendi, quod cum ducimus nesciunt ipsa eum,
+                    explicabo eaque obcaecati.
+                </p>
+
+                <a href="#" class="btn bt">Book Now</a>
+            </div>
+        </div>
+    </div>
+    <!-- End Discount -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container flex">
+            <p class="tertiary">
+                &copy; 2023 Programmer cw. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- End Footer -->
+    <script> //Js
+        document.querySelector(".mobile-btn").addEventListener("click", function () {
+          document.querySelector(".menu").classList.toggle("active");
+        });</script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>/* General Footer Styles */
+    .footer {
+        background-color: #282828;
+        color: #fff;
+        padding: 50px 20px;
+        text-align: left;
+        font-family: 'Arial', sans-serif;
+    }
+    
+    .footer a {
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    .footer a:hover {
+        text-decoration: underline;
+    }
+    
+    .footer-border {
+        height: 2px;
+        background-color: #444;
+        margin: 20px 0;
+    }
+    
+    /* News Letter Styles */
+    .news-letter {
+        margin-bottom: 30px;
+    }
+    
+    .news-letter-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    
+    .news-letter-form {
+        display: flex;
+        gap: 10px;
+    }
+    
+    .news-letter-form input[type="email"] {
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        flex: 1;
+        font-size: 16px;
+    }
+    
+    .news-letter-form input[type="submit"] {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        background-color: #f15454;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
+    .news-letter-form input[type="submit"]:hover {
+        background-color: #e14343;
+    }
+    
+    /* Footer Content Styles */
+    .footer-content-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+    
+    .footer-content {
+        max-width: 300px;
+    }
+    
+    .footer-logo {
+        font-size: 32px;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+    
+    .company-desc {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    
+    .footer-contact-info {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    
+    .footer-contact-info td {
+        padding: 5px 0;
+        vertical-align: top;
+    }
+    
+    .footer-contact-info i {
+        margin-right: 10px;
+    }
+    
+    /* Footer Navigation Styles */
+    .footer-nav-container {
+        max-width: 200px;
+    }
+    
+    .footer-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    
+    .footer-nav {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .footer-nav-list {
+        padding: 0;
+    }
+    
+    .footer-nav-item {
+        margin-bottom: 10px;
+    }
+    
+    .footer-nav-link {
+        font-size: 14px;
+    }
+    
+    .footer-nav-link:hover {
+        text-decoration: underline;
+    }
+    
+    /* Latest Post Styles */
+    .latest-post-container {
+        max-width: 350px;
+    }
+    
+    .latest-post {
+        display: flex;
+        margin-bottom: 15px;
+    }
+    
+    .latest-post-img-container {
+        flex-shrink: 0;
+        margin-right: 15px;
+    }
+    
+    .latest-post-img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+    
+    .latest-post-title {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    
+    .latest-post-desc {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    /* Social Navigation Styles */
+    .social-nav-container {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .social-nav-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .social-nav-item {
+        display: inline-block;
+    }
+    
+    .social-link i {
+        font-size: 24px;
+    }
+    
+    .social-link:hover {
+        color: #f15454;
+    }
+    
+    /* Copyright Styles */
+    .copyright {
+        text-align: center;
+        padding-top: 10px;
+        border-top: 1px solid #444;
+    }
+    
+    .copy-text {
+        font-size: 14px;
+    }
+    </style>
+</head>
+<body>
+  <footer class="footer" id="Contect">
+    <div class="news-letter">
+        <p class="news-letter-title">News Letter</p>
+        <form action="#" class="news-letter-form">
+            <input type="email" id="news-letter-email" placeholder="Enter your email..">
+            <input type="submit" id="news-letter-submit">
+        </form>
+    </div>
+    <div class="footer-border"></div>
+    <div class="footer-content-container">
+        <div class="footer-content">
+            <a href="#" class="link footer-logo">yoga</a>
+            <p class="company-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem obcaecati, aut ab id
+                nulla exercitationem vero deleniti molestiae totam maxime?</p>
+            <table class="footer-contact-info">
+                <tr>
+                    <td><i class="fas fa-envelope"></i></td>
+                    <td>vinay.de94@gmail.com</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-phone-alt"></i></td>
+                    <td>7484846218 <br> 9939254373</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-map-marker-alt"></i></td>
+                    <td>123- Street, <br> Sawangi<br> Wardha, India</td>
+                </tr>
+            </table>
+        </div>
+        <div class="footer-nav-container">
+            <p class="footer-title">Useful Links</p>
+            <nav class="footer-nav">
+                <ul class="footer-nav-list">
+                    <li class="footer-nav-item">
+                        <a href="#home" class="footer-nav-link link" >Home</a>
+                    </li>
+                    <li class="footer-nav-item">
+                        <a href="#program" class="footer-nav-link link" >Program</a>
+                    </li>
+                    <li class="footer-nav-item">
+                        <a href="#choose" class="footer-nav-link link" >Choose us</a>
+                    </li>
+                    <li class="footer-nav-item">
+                        <a href="#pricing" class="footer-nav-link link" >pricing</a>
+                    </li>
+                    <li class="footer-nav-item">
+                        <a href="#Contect" class="footer-nav-link link" >Contect</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="latest-post-container">
+            <p class="footer-title">Latest Post</p>
+            <a class="latest-post link" href="#">
+                <div class="latest-post-img-container">
+                    <img src="img/banner-img-1.jpg" alt="" class="latest-post-img">
+                </div>
+                <div class="latest-post-content">
+                    <p class="latest-post-title">Latest post one.</p>
+                    <p class="latest-post-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+                        pariatur alias voluptatibus aliquid dolores veniam nam saepe tenetur rerum necessitatibus?
+                    </p>
+                </div>
+            </a>
+            <a class="latest-post link" href="#">
+                <div class="latest-post-img-container">
+                    <img src="img/banner-img-2.jpg" alt="" class="latest-post-img">
+                </div>
+                <div class="latest-post-content">
+                    <p class="latest-post-title">Latest post two.</p>
+                    <p class="latest-post-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+                        pariatur alias voluptatibus aliquid dolores veniam nam saepe tenetur rerum necessitatibus?
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="social-nav-container">
+        <ul class="social-nav-list">
+            <li class="social-nav-item">
+                <a href="#" class="link social-link">
+                    <i class="fab fa-facebook-square" ></i>
+                </a>
+            </li>
+            <li class="social-nav-item">
+                <a href="#" class="link social-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+            <li class="social-nav-item">
+                <a href="#" class="link social-link">
+                    <i class="fab fa-twitter-square"></i>
+                </a>
+            </li>
+            <li class="social-nav-item">
+                <a href="#" class="link social-link">
+                    <i class="fab fa-youtube" size="30px"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="copyright">
+        <p class="copy-text">Copyright &copy;2020 Non Degree Programmer All Rights Reserved</p>
+    </div>
+</footer>
+
+
+    <!--=============== MAIN JS ===============-->
+    <script src="fitness.js"></script>
+</body>
+</html>

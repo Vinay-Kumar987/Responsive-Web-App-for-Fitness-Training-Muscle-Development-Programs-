@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diet and Workouts Recommendations</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background: linear-gradient(to right, #141e30, #243b55); color:white;">
+    <div class="container mycont mt-5" 
+         style="background: linear-gradient(145deg, #ffffff, #e6e6e6); 
+                color:black;
+                border-radius:15px; 
+                padding:10px;
+                box-shadow: 8px 8px 15px #141e30, -8px -8px 15px #243b55;">
+        <h1 class="text-center" 
+            style="color: #e94560; text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);">
+            Diet and Workouts Recommendations
+        </h1>
+
+        <form action="/recommend" method="post">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="age" style="font-weight: bold;">Age:</label>
+                        <input type="number" class="form-control" id="age" name="age" 
+                               style="box-shadow: inset 5px 5px 10px #aaa, inset -5px -5px 10px #fff;">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="gender" style="font-weight: bold;">Gender:</label>
+                        <select class="form-control" id="gender" name="gender"
+                                style="box-shadow: inset 5px 5px 10px #aaa, inset -5px -5px 10px #fff;">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="weight" style="font-weight: bold;">Weight (kg):</label>
+                        <input type="number" class="form-control" id="weight" name="weight" 
+                               style="box-shadow: inset 5px 5px 10px #aaa, inset -5px -5px 10px #fff;">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="height" style="font-weight: bold;">Height (m):</label>
+                        <input type="number" class="form-control" id="height" name="height" step="0.01" 
+                               style="box-shadow: inset 5px 5px 10px #aaa, inset -5px -5px 10px #fff;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="veg_or_nonveg" style="font-weight: bold;">Veg or Non-Veg:</label>
+                        <select class="form-control" id="veg_or_nonveg" name="veg_or_nonveg"
+                                style="box-shadow: inset 5px 5px 10px #aaa, inset -5px -5px 10px #fff;">
+                            <option value="veg">Veg</option>
+                            <option value="nonveg">Non-Veg</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="disease" style="font-weight: bold;">Generic Disease:</label>
+                        <input type="text" class="form-control" id="disease" name="disease"
+                               style="box-shadow: inset 5px 5px 10px #aaa, inset -5px -5px 10px #fff;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="region" style="font-weight: bold;">Region:</label>
+                        <input type="text" class="form-control" id="region" name="region"
+                               style="box-shadow: inset 5px 5px 10px #aaa, inset -5px -5px 10px #fff;">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="allergics" style="font-weight: bold;">Allergics:</label>
+                        <input type="text" class="form-control" id="allergics" name="allergics"
+                               style="box-shadow: inset 5px 5px 10px #aaa, inset -5px -5px 10px #fff;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="foodtype" style="font-weight: bold;">Food Type:</label>
+                <input type="text" class="form-control" id="foodtype" name="foodtype"
+                       style="box-shadow: inset 5px 5px 10px #aaa, inset -5px -5px 10px #fff;">
+            </div>
+
+            <button type="submit" class="btn btn-danger btn-lrg" 
+                    style="width:50%; padding:10px; margin-left:25%; 
+                           font-weight:bold;
+                           background: linear-gradient(to right, #e94560, #f08a5d); 
+                           box-shadow: 5px 5px 15px rgba(0,0,0,0.3);">
+                Recommend Diets
+            </button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
